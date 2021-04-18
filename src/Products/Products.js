@@ -30,14 +30,14 @@ function Products({ products }) {
     return (
         <div>
             <div className="searchByBrand">
-                <input type="text" onChange={e => setSearchBrandHolder(e.target.value)} placeholder="Search by brand"></input>
+                <input className="searchInput" type="text" onChange={e => setSearchBrandHolder(e.target.value)} placeholder="Search by brand"></input>
                 <SearchIcon className="searchIcon" onClick={e => setSearchBrand(searchBrandHolder)} />
             </div>
             <Row gutter={[16, 16]} className="gridCards">
                 {
                     searching
                         ? (
-                            products.filter((product, index) => searchBrand === product.brandName).map((product, index) =>
+                            products.filter((product, index) => searchBrand.toUpperCase() === product.brandName.toUpperCase()).map((product, index) =>
                             (
                                 <React.Fragment key={index} >
                                     <GridCard
