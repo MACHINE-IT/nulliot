@@ -21,4 +21,11 @@
     margin-right: 20px;
 }
 
+.link {
+    color: white;
+}
+
+.link:hover {
+    color:rgb(133, 214, 241) !important;
+}
 
