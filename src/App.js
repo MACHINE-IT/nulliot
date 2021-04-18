@@ -1,23 +1,41 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { uuid } from 'uuidv4';
 import './App.css';
+import Navbar from './Navbar/Navbar';
+import Products from './Products/Products';
+import Admin from './Admin/Admin';
 
 function App() {
+  const LOCAL_STORAGE_KEY = "products";
+  const [products, setProducts] = useState([]);
+
+  const addProductHandler = (product) => {
+    console.log(product);
+    setProducts([...products, { id: uuid(), ...product }]);
+  };
+
+  useEffect(() => {
+    const retriveProducts = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    if (retriveProducts) setProducts(retriveProducts);
+  }, []);
+  
+  useEffect(() => {
+    if (products?.length) {
+      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(products));
+    }
+  }, [products]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route path="/admin" exact render={(props) => <Admin {...props} addProductHandler={addProductHandler} />} />
+          <Route path="/products" exact render={(props) => <Products {...props} products={products} />} />
+        </Switch>
+      </Router>
+
     </div>
   );
 }

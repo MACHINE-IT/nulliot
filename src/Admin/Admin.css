@@ -1,0 +1,33 @@
+.addProduct {
+    margin-top: 40px;
+    border: 2px solid black; 
+    border-color:rgb(7, 50, 85, 0.6);
+    border-radius: 10px;
+    width:auto;
+    align-content: start;
+    float: left;
+    margin-left: 45%;
+    margin-right: 50%;
+    padding: 10px;
+}
+
+input {
+    height: 20px;
+    padding: 20px;
+    margin-left: 5px;
+    border-radius: 5px;
+    border-width: 0.2px;    
+}
+
+.submit {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    background-color: rgb(7, 50, 85);
+    color: white;
+    padding: 5px 40px;
+    border-radius: 10px;
+}
+
+input:focus {
+    border-color: rgb(7, 50, 85);
+}

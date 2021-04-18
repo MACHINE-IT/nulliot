@@ -1,0 +1,24 @@
+.searchByBrand {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    border-radius: 7px;
+    padding-left: 10px;
+    width:fit-content;
+    margin-left: 45%;
+    padding-right: 5px;
+}
+.searchByBrand input {
+    border: 1px solid black;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-left: -10px;
+    padding-left: 10px;
+    margin-right: 5px;
+    width: 250px;
+}
+
+.searchByBrand input:focus {
+    border-color: rgb(133, 214, 241);
+    color: #408585;
+}

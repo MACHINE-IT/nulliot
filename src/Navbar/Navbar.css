@@ -1,0 +1,24 @@
+*body {
+    margin: 0
+}
+
+.navbar {
+  background: #408585;
+  color: white;
+  padding-bottom: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+
+.navbar .products {
+    float: right;
+    margin-right: 40px;
+}
+.navbar .admin {
+    float: right;
+    margin-right: 20px;
+}
+
+
